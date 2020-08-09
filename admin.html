@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styleSheet.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="admin.js" type="text/javascript"></script>
+        <title>MEWP Log Admin</title>
+    </head>
+    <body>
+        <h1>MEWP Log Admin</h1>
+        <div id='messageDiv'></div><br>
+        <h2>MEWP List:</h2>
+        <div id='MEWPTable'></div>
+        <h2>Create Asset:</h2>
+        <table>
+            <tr>
+                <th>Asset Number</th><th>Description</th><th>Admin Password:</th><th></th>
+            </tr>
+            <tr>
+                <td><input type="text" id="asset" hint="Asset Number"></td>
+                <td><input type="text" id="description" hint="Description"></td>
+                <td><input type="password" id="adminpwd1" hint="password"></td>
+                <td><input type="submit" value="Submit" onclick="createAsset()"></td>
+            </tr>
+        </table>
+
+        <h2>Delete Asset:</h2>
+        <table>
+            <tr>
+                <th>Asset Number</th><th>Admin Password</th><th></th>
+            </tr>
+            <tr>
+                <td><input type="text" id="assetDel" hint="Asset Number"></td>
+                <td><input type="password" id="adminpwd2" hint="password"></td>
+                <td><input type="submit" value="Delete" onclick="deleteAsset()"></td>
+            </tr>
+        </table>
+    </body>
+</html>

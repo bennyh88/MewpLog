@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1-transitional.dtd">
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styleSheet.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      	<script src="mewp.js" type="text/javascript"></script>
+		<script src="mewpModal.js" type="text/javascript"></script>
+		<title>MEWP Log</title>
+	</head>
+	<body>
+		<h1>MEWP Log</h1>
+        <div id="responseDiv"></div>
+		<br>
+		<h2>Live MEWP status</h2>
+		<input type="button" value="Book MEWP Out" onclick="assetOutModal()">
+		<input type="button" value="Book MEWP In" onclick="assetInModal()">
+		<br>
+		<input type='radio' name='statusRadio' value='all' checked='checked'>All</input>
+		<input type='radio' name='statusRadio' value='out'>In use</input>
+		<input type='radio' name='statusRadio' value='in'>Available</input>
+        <div id="assetTable" class="tableFixHead"></div>
+
+		<h2>MEWP User History</h2>
+        <div id="assetsRadioButtons"></div>
+		<div id="logTable" class="tableFixHead"></div>
+
+		<div id="outModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onClick="closeOutModal()">&times;</span>
+			  	<p>Book MEWP Out</p>
+			 	<form>
+					<div id="outModalAssetDropDown">loading drop-down...</div>
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" hint="Name"><br>
+					<label for="clockno">Clock Number:</label>
+					<input type="text" id="clockno" name="clockno" hint="Clock Number"><br>
+					<label for="jobno">Job Number:</label>
+					<input type="text" id="jobno" name="jobno" hint="Job Number"><br>
+					<input type="button" value="Submit" onClick="setAssetOut()">
+				</form>
+		  	</div>
+		</div>
+
+		<div id="inModal" class="modal">
+			<div class="modal-content">
+			  <span class="close" onClick="closeInModal()">&times;</span>
+			  <p>Book MEWP In</p>
+			  <form>
+				  <div id="inModalAssetDropDown">loading drop-down...</div>
+				  <label for='commentInput'>Defect(if required):</label>
+				  <textarea id="commentInput" name="commentInput" rows="4" cols="50"></textarea><br>
+				  <input type="button" value="Submit" onClick="setAssetIn()">
+			  </form>
+		  	</div>
+		</div>
+
+    </body>
+</html>
